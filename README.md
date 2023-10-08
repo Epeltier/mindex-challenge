@@ -84,3 +84,29 @@ Compensation from the persistence layer.
 
 ## Delivery
 Please upload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
+
+##Eric's Notes
+
+Added new endpoints
+```
+* CREATE COMPENSATION
+    * HTTP Method: POST 
+    * URL: localhost:8080/compensation
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
+* READ COMPENSATION
+    * HTTP Method: GET 
+    * URL: localhost:8080/compensation?employeeId={id}
+    * RESPONSE: Compensation
+* READ REPORTING STATUS
+    * HTTP Method: GET 
+    * URL: localhost:8080/employee/{id}/reporting-status
+    * RESPONSE: ReportingStatus
+```
+
+On the GET of the reportingstatus I interpretted the "fully filled" to mean the employee's subordinates tree should be the full employees' details. 
+
+
+Other changes
+* Added @Id on Employee to fix an issue with the PUT/update creating duplicates in the db
+* Updated some exceptions to align with HTTP status code responses (Ex - 404 for request for entity that doesnt exist) 

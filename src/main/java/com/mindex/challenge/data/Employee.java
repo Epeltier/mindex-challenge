@@ -1,8 +1,13 @@
 package com.mindex.challenge.data;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.List;
 
 public class Employee {
+
+    //set as Id field to prevent PUT/save request from creating new entities.
+    @Id
     private String employeeId;
     private String firstName;
     private String lastName;
